@@ -5,7 +5,7 @@
     <div class="px-20 py-20 flex flex-col gap-4 h-full bg-red-100">
         <h1> All Images</h1>
         @foreach ($posts as $post)
-            <div class="flex flex-col">
+            <div class="flex flex-col border-b-4 border-black">
                 <h2>{{ $post->title }}</h2>
                 <p>{{ $post->description }}</p>
                 @if ($post->images->count() > 0)
@@ -25,11 +25,12 @@
                         @endforeach
                     </ul>
                 @endif
+                <form action="{{ url('/posts/' . $post->id . '/download') }}" method="get">
+                    @csrf
+                    <button type="submit" class="bg-blue-300 rounded-lg  px-2 py-2 mb-4">Download Images</button>
+                </form>
             </div>
-            <form action="{{ url('/posts/' . $post->id . '/download') }}" method="get">
-                @csrf
-                <button type="submit" class="bg-blue-300 rounded-lg  px-2 py-2">Download Images</button>
-            </form>
+
         @endforeach
 
     </div>
