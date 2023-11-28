@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-6">
                     <label for="message" class="block mb-2 text-sm font-medium text-black">Description</label>
-                    <textarea id="message" rows="4" name="description" value="{{ old('description') }}"
+                    <textarea id="message" rows="4" name="description"
                         class="block p-2.5 w-full text-sm text-black bg-gray-100 rounded-lg border-gray-300"
                         placeholder="Leave a comment....">
                     </textarea>
